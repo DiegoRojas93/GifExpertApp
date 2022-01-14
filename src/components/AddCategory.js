@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 
-function AddCategory() {
+function AddCategory( { setCategories } ) {
 
-  const [inputValue, setInputValue] = useState('Hello Input');
+  const [inputValue, setInputValue] = useState('');
 
   const handleChange = e => {
     setInputValue(e.target.value)
@@ -10,7 +11,8 @@ function AddCategory() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(`El formulario ha sido enviado`);
+    setCategories(cats => [...cats, inputValue])
+    setInputValue('')   // borra el valor del input enviado
   }
 
   return (
@@ -22,6 +24,10 @@ function AddCategory() {
       />
     </form>
   )
+}
+
+AddCategory.propTypes = {
+  setCategories: PropTypes.func.isRequired
 }
 
 export default AddCategory;

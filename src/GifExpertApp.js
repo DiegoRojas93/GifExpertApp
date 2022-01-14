@@ -1,3 +1,5 @@
+// ./src/GifExpertApp.js
+
 import React, { useState } from 'react';
 import AddCategory from './components/AddCategory';
 
@@ -8,18 +10,12 @@ function GifExpertApp() {
     ['One Punch', 'Samurai X', 'Dragon Ball']
   );
 
-  const handleApp = title => {
-    setCategories( cats => [ ...cats, title ] )
-  }
-
   return (
     <>
       <h2>GifExpertApp</h2>
-      <AddCategory />
+      <AddCategory setCategories={setCategories}/>
 
       <hr />
-
-      <button onClick={() => handleApp('SevenDailySins')}> Add </button>
 
       <ol>
         {
