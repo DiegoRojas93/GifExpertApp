@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import AddCategory from './components/AddCategory';
+
 
 function GifExpertApp() {
 
@@ -13,6 +15,8 @@ function GifExpertApp() {
   return (
     <>
       <h2>GifExpertApp</h2>
+      <AddCategory />
+
       <hr />
 
       <button onClick={() => handleApp('SevenDailySins')}> Add </button>
