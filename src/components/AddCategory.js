@@ -11,7 +11,7 @@ function AddCategory( { setCategories } ) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    setCategories(cats => [...cats, inputValue])
+    setCategories(cats => [ inputValue, ...cats])
     setInputValue('')   // borra el valor del input enviado
   }
 
